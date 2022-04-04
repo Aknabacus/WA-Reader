@@ -24,14 +24,14 @@ def parse_file():
     if len(file_req) == 0:
         response = {
             "success": False,
-            "error_message": "Please upload a file to proceed.",
+            "error_message": "aknAnatomyError0x40 - No file was provided.",
         }
         return jsonify(response), 200
     file = file_req['0']
     if not allowed_file(file.filename):
         response = {
             "success": False,
-            "error_message": "Please upload a valid file!",
+            "error_message": "aknAnatomyError0x42 - This file doesn't have a valid extension.",
         }
     else:
         attachment_flag = False
@@ -75,11 +75,10 @@ def main():
     empty_directory("static/chat")
     ctx = {
         'is_prod': IS_PROD,
-        'contribution_link': CONTRIBUTION_LINK,
         'default_error_message': DEFAULT_ERROR_MESSAGE,
     }
     if request.args.get('redirect'):
-        message = "Sorry, we couldn't find the page"
+        message = "akn_HTMLError404 - Sorry, that page couldn't be found."
         return render_template("index.html", data=ctx, error_message=message)
     else:
         return render_template("index.html", data=ctx)
@@ -91,4 +90,4 @@ def not_found(e):
 
 
 if __name__ == "__main__":
-    app.run(debug=not IS_PROD, host="0.0.0.0", threaded=True)
+    app.run(debug=not IS_PROD, port=8066, threaded=True)
