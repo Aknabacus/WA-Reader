@@ -1,5 +1,4 @@
-CONTRIBUTION_LINK = "https://www.buymeacoffee.com/qITGMWB"
-DEFAULT_ERROR_MESSAGE = "It wasn't a valid text file or we were not able to convert it"
+DEFAULT_ERROR_MESSAGE = "aknAnatomyError - Sorry, there was an error processing your file. aknAnatomy cannot provide any further details (a bug report has been sent)"
 
 ATTACHMENT_MESSAGES = [
     "Media attached",
