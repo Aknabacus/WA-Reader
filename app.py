@@ -4,7 +4,7 @@ import zipfile
 
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 
-from constants import CONTRIBUTION_LINK, DEFAULT_ERROR_MESSAGE
+from constants import DEFAULT_ERROR_MESSAGE
 from utils import get_parsed_file, empty_directory
 
 app = Flask(__name__)
